@@ -1,3 +1,4 @@
+//PART 1 OF PUZZLE:
 //2 of the entries in expense report add together to equal 2020, find the number you get when you multiply those 2
 //entries together.
 
@@ -202,22 +203,47 @@ let expenseReport = [
     1573,
     1908,
     1903
-]
+];
 
 //name of array is expenseReport
 
 function solution(arr) {
-    for(let i = 0; i < arr.length; i++){
-        for(let y = 0; y < arr.length; y++){
-            if(i !== y){
+    for(let i = 0; i <= arr.length; i++){
+        for(let y = 0; y <= arr.length; y++){
+            if(i !== y ){
                 if(arr[i] + arr[y] === 2020){
                     let productAnswer = arr[i] * arr[y]
+                    console.log(i, y)
                     console.log(productAnswer)
                     return productAnswer
+                } else {
+                    console.log(i)
                 }
             }
         }
     }
 }
 
-solution(expenseReport)
+// solution(expenseReport)
+
+//PART 2 OF PUZZLE : same problem but now use three entries instead of 2
+
+function solutionPart2(arr){
+    for(let i = 0; i<= arr.length; i++){
+        for(let y = 0; y <= arr.length; y++){
+            for(let x = 0; x <= arr.length; x++){
+                if(i !== x && y !== i && y !== x){
+                    if(arr[i] + arr[y] + arr[x] === 2020){
+                        let ProductSolution = arr[i] * arr[y] *arr[x];
+                        console.log(ProductSolution);
+                        return(ProductSolution);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// console.log(expenseReport.length)
+
+solutionPart2(expenseReport)
